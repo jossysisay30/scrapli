@@ -1,13 +1,13 @@
 ---
   R2:
-    hostname: 192.168.2.2
+    hostname: 192.168.2.1
     platform: 'ios'
     username: cisco
     password: cisco
     groups:
         - cisco_group
 
-R3:
+  R3:
     hostname: 192.168.4.2
     platform: 'ios'
     username: cisco
@@ -15,7 +15,7 @@ R3:
     groups:
         - cisco_group
 
-R4:
+  R4:
     hostname: 192.168.5.2
     platform: 'ios'
     username: cisco

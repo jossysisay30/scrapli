@@ -1,0 +1,52 @@
+---
+ted-dis:
+  username: cisco
+  password: cisco
+  hostname: 172.16.222.209
+  transport: ssh2
+  groups:
+      - cisco_group
+  data:
+    campus: ted
+
+  connection_options:
+    scrapli:
+      platform: cisco_iosxe
+      port: 22
+      extras:
+        ssh_config_file: ssh_config
+        auth_strict_key: False
+mar-dis:
+  username: cisco
+  password: cisco
+  hostname: 172.16.222.210
+  transport: ssh2
+  groups:
+      - cisco_group
+  data:
+    campus: mar
+
+  connection_options:
+    scrapli:
+      platform: cisco_iosxe
+      port: 22
+      extras:
+        ssh_config_file: ssh_config
+        auth_strict_key: False
+fas-dis:
+  username: cisco
+  password: cisco
+  hostname: 172.16.222.211
+  transport: ssh2
+  groups:
+      - cisco_group
+  data:
+    campus: mar
+
+  connection_options:
+    scrapli:
+      platform: cisco_iosxe
+      port: 22
+      extras:
+        ssh_config_file: ssh_config
+        auth_strict_key: False

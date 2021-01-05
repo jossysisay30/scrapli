@@ -1,0 +1,859 @@
+2021-01-04 12:30:08,031 -  nornir.core -     INFO -        run() - Running task 'get_prompt' with args {} on 1 hosts
+2021-01-04 12:30:08,842 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-01-04 12:32:12,131 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-01-04 12:36:25,915 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-01-04 12:37:44,736 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-01-04 12:37:58,392 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-01-04 12:38:10,263 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2021-01-04 12:38:29,479 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 1 hosts
+2021-01-04 12:40:38,303 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 2 hosts
+2021-01-04 12:40:38,323 - nornir.core.task -    ERROR -      start() - Host 'ios': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 75, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 85, in open
+    connection = Scrapli(**parameters, platform=platform)  # type: ignore
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 304, in __new__
+    final_driver, additional_kwargs = _get_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 264, in _get_driver
+    final_driver, additional_kwargs = _get_community_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 222, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 86, in _get_community_platform_details
+    raise ModuleNotFoundError(warning) from exc
+ModuleNotFoundError: 
+***** Platform 'cisco_ios' not found! *************************************************
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+***** Platform 'cisco_ios' not found! *************************************************
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 87, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2021-01-04 12:40:49,462 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 2 hosts
+2021-01-04 12:40:49,480 - nornir.core.task -    ERROR -      start() - Host 'ios': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 75, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 85, in open
+    connection = Scrapli(**parameters, platform=platform)  # type: ignore
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 304, in __new__
+    final_driver, additional_kwargs = _get_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 264, in _get_driver
+    final_driver, additional_kwargs = _get_community_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 222, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 86, in _get_community_platform_details
+    raise ModuleNotFoundError(warning) from exc
+ModuleNotFoundError: 
+***** Platform 'cisco_ios' not found! *************************************************
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+***** Platform 'cisco_ios' not found! *************************************************
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 87, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2021-01-04 12:42:04,814 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 2 hosts
+2021-01-04 12:42:04,832 - nornir.core.task -    ERROR -      start() - Host 'ios': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 75, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 85, in open
+    connection = Scrapli(**parameters, platform=platform)  # type: ignore
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 304, in __new__
+    final_driver, additional_kwargs = _get_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 264, in _get_driver
+    final_driver, additional_kwargs = _get_community_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 222, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 86, in _get_community_platform_details
+    raise ModuleNotFoundError(warning) from exc
+ModuleNotFoundError: 
+***** Platform 'cisco_ios' not found! *************************************************
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+***** Platform 'cisco_ios' not found! *************************************************
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 87, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2021-01-04 12:46:45,805 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 1 hosts
+2021-01-04 12:46:45,811 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 75, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 85, in open
+    connection = Scrapli(**parameters, platform=platform)  # type: ignore
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 304, in __new__
+    final_driver, additional_kwargs = _get_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 264, in _get_driver
+    final_driver, additional_kwargs = _get_community_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 222, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/scrapli/factory.py", line 86, in _get_community_platform_details
+    raise ModuleNotFoundError(warning) from exc
+ModuleNotFoundError: 
+***** Platform 'cisco_ios' not found! *************************************************
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+***** Platform 'cisco_ios' not found! *************************************************
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 87, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2021-01-04 12:48:55,699 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 1 hosts
+2021-01-04 12:50:16,024 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 12:50:41,100 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:04:18,532 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:04:18,536 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:05:04,809 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:05:04,812 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:06:41,874 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:06:41,877 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:08:51,152 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:08:51,155 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:09:09,539 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:09:09,542 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:10:08,243 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:10:08,246 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:15:52,505 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:15:52,508 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:16:52,133 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:16:52,135 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:17:28,213 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:17:28,216 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:18:05,673 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:18:05,676 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:19:49,508 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:19:49,511 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:20:35,676 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:20:35,679 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_scrapli/tasks/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 439, in get_connection
+    conn = self.get_connection_parameters(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 373, in get_connection_parameters
+    r = self._get_connection_options_recursively(connection)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 402, in _get_connection_options_recursively
+    sp = g._get_connection_options_recursively(connection)
+AttributeError: 'str' object has no attribute '_get_connection_options_recursively'
+
+2021-01-04 13:21:53,072 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:22:28,875 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:27:00,167 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:32:40,034 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:32:41,347 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 8.8.8.8 2.2.2.2 10.10.10.10']} on 1 hosts
+2021-01-04 13:39:41,595 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:41:19,074 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 13:41:20,237 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 8.8.8.8 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 13:41:20,240 - nornir.core.task -    ERROR -      start() - Host 'iosxe-1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:12:11,902 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:12:13,045 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:12:15,023 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 8.8.8.8 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:12:15,034 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:13:00,034 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:13:00,973 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:13:01,962 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 8.8.8.8 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:13:01,976 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:13:01,976 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:13:01,977 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:17:24,280 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:17:25,265 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:17:26,324 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 8.8.8.8 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:17:26,336 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:17:26,337 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:17:26,341 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:19:21,422 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:19:22,457 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:19:23,488 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 8.8.8.8 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:19:23,499 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:19:23,500 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:19:23,503 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:19:57,239 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:19:58,514 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:19:59,518 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:19:59,528 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:19:59,529 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:19:59,531 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:20:18,307 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:20:19,495 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:20:20,544 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:20:20,559 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:20:20,560 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config_commands': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:20:20,572 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config_commands'
+
+2021-01-04 14:21:19,616 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:21:20,776 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:21:21,802 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:21:21,821 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config'
+
+2021-01-04 14:21:21,821 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'config': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:21:21,822 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config'
+
+2021-01-04 14:22:58,112 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:22:59,372 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:23:00,465 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:23:01,063 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:47:23,276 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:47:24,517 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:47:25,032 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:47:26,144 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:51:23,497 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:51:24,797 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:51:25,247 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:51:26,372 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:51:26,872 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 14:51:26,879 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 14:51:26,881 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 14:51:26,883 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 14:53:21,115 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:53:22,471 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:53:22,973 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:53:24,068 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:53:24,578 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 14:53:24,582 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 14:55:30,723 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:55:31,839 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:55:32,482 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:55:33,506 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:55:34,067 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 14:55:34,072 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 14:55:34,073 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 14:55:34,077 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 14:56:16,886 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:56:17,950 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 14:56:18,420 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 14:56:19,536 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 14:56:20,026 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 14:56:20,030 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 14:56:20,031 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 14:56:20,034 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:03:23,956 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:03:24,934 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:03:25,162 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:03:25,610 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:03:26,649 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:03:27,138 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:03:27,144 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:03:27,145 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:03:27,149 - nornir.core.task -    ERROR -      start() - Host 'mar-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:10:34,550 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:10:35,624 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:11:10,285 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:11:11,475 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:11:12,527 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:11:12,803 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:11:13,343 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:11:13,587 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:11:14,003 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:11:14,008 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:11:25,271 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:11:26,376 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:11:27,622 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:11:27,990 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:11:28,587 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:11:28,834 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:11:29,558 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:11:29,562 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:11:43,939 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:11:44,795 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:11:45,713 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:11:46,020 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:11:46,478 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:11:46,698 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:11:47,211 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:11:47,223 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:12:03,794 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:12:04,898 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:12:05,778 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:12:06,026 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:12:06,578 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:12:06,805 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:12:07,281 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:12:07,285 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:24:41,590 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:24:42,833 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:24:44,000 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:24:44,187 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:24:44,643 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:24:44,902 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:24:45,448 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:24:45,452 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:25:01,544 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:25:02,753 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:25:03,741 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:25:04,086 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:25:04,571 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:25:04,805 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:25:05,341 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:25:05,345 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-04 15:25:53,625 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:25:54,587 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-04 15:25:55,592 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:25:55,805 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool vlan10', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-04 15:25:56,321 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-04 15:25:56,549 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool maroff', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 1 hosts
+2021-01-04 15:25:56,957 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-04 15:25:56,961 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:44:35,368 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:44:50,448 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:45:02,483 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:45:05,593 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:45:09,712 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:45:14,280 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:45:17,940 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:45:20,346 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:45:20,365 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:48:10,009 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:48:18,353 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:48:25,217 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:48:28,054 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:48:29,890 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:48:35,443 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:48:38,819 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:48:40,671 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:48:40,680 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:50:59,792 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:51:05,559 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:51:11,685 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:51:14,729 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:51:16,492 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:51:19,607 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:51:22,022 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:51:24,173 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:51:24,186 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:52:24,267 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:52:30,166 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:52:38,133 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:52:40,985 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:52:42,772 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:52:46,769 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:52:49,024 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:52:50,468 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:52:50,475 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:55:09,764 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:55:14,716 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:55:20,719 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:55:24,249 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:55:26,154 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:55:31,634 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:55:34,713 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:55:37,197 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:55:37,200 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:56:15,981 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:56:19,716 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:56:24,658 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:56:27,602 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:56:30,494 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:56:34,313 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:56:37,603 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:56:39,740 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:56:39,745 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:56:58,517 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:57:04,000 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:57:10,643 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:57:13,393 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:57:15,292 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:57:19,879 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:57:22,959 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:57:25,088 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:57:25,103 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 06:58:41,654 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 06:58:46,017 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 06:58:52,574 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 06:58:55,291 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 06:58:57,167 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 06:59:00,420 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:59:02,133 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 06:59:04,582 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 06:59:04,596 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 07:00:02,776 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 07:00:07,614 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 07:00:12,182 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 07:00:14,142 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 07:00:16,714 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 07:00:20,506 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:00:22,198 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:00:23,997 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 07:00:24,002 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 07:38:21,006 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 07:38:35,550 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 07:38:48,374 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 07:38:54,651 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 07:39:00,169 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 07:39:12,329 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:39:17,848 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:39:20,283 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 07:39:20,304 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 07:39:26,360 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 07:39:35,203 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 07:39:43,988 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 07:39:51,269 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 07:39:55,418 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 07:40:05,860 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:40:17,538 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:40:20,543 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 07:40:20,548 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+
+2021-01-05 07:45:08,099 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 1 hosts
+2021-01-05 07:45:15,662 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc dns-server'} on 2 hosts
+2021-01-05 07:45:25,297 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 1 hosts
+2021-01-05 07:45:28,757 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool ted', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']} on 1 hosts
+2021-01-05 07:45:33,524 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show running-config | inc ip dhcp pool'} on 2 hosts
+2021-01-05 07:45:37,701 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:45:40,997 -  nornir.core -     INFO -        run() - Running task 'send_configs' with args {'configs': ['ip dhcp pool fas', 'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']} on 2 hosts
+2021-01-05 07:45:42,690 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'configs': 'show running-config | inc dns-server '} on 1 hosts
+2021-01-05 07:45:42,694 - nornir.core.task -    ERROR -      start() - Host 'ted-dis': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: send_command() got an unexpected keyword argument 'configs'
+

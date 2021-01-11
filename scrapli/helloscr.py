@@ -13,13 +13,10 @@ from nornir_scrapli.tasks import (
 )
 
 nr = InitNornir(config_file="config.yaml")
-#prompt_results = nr.run(task=get_prompt)
 ted_targets=nr.filter(F(campus='ted'))
 mar_targets=nr.filter(F(campus='mar'))
 tedresultt = ted_targets.run(task=send_command, command="show running-config | inc dns-server")
 marresultt = mar_targets.run(task=send_command, command="show running-config | inc dns-server")
-#print_result(resultt)
-#result2 = mar_targets.run(task=send_command, command="show running-config | inc ip dhcp pool")
 def ted_campus():
     result = ted_targets.run(task=send_command, command="show running-config | inc ip dhcp pool")
     for y in result.keys():
@@ -31,13 +28,13 @@ def ted_campus():
              print_result('yes')
              for x in temp2:
                  print(x)
-                 commands=[x ,'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 80.80.80.80 4.4.4.4 10.10.10.10']
+                 commands=[x ,'dns-server x.x.x.x x.x.x.x x.x.x.x']
                  ted_targets.run(task=send_configs,configs=commands)
                  print('-'*80)
                  print(Fore.GREEN + 'yes dns added for ', y)
                  print('-'*80)
         else:
-               print('no')
+               print('dhcp pool found not found')
 def mar_campus():
     result2 = mar_targets.run(task=send_command, command="show running-config | inc ip dhcp pool")
     for y in result2.keys():
@@ -49,7 +46,7 @@ def mar_campus():
              print_result('yes')
              for z in temp2:
                 print(z)
-                commands=[z ,'dns-server 10.139.5.14 10.139.5.10 10.154.5.10 9.9.9.9 20.20.20.20 10.10.10.10']
+                commands=[z ,'dns-server x.x.x.x x.x.x.x x.x.x.x']
                 mar_targets.run(task=send_configs,configs=commands)
                 print('-'*80)
                 print(Fore.GREEN +'yes dns added for ', y)
@@ -64,9 +61,7 @@ def dnscheck():
             print(Fore.CYAN + '-'*30 + 'DNS RESULT' + Fore.CYAN + '-'*30)
             print(Fore.RED + teddns1)
             print(Fore.CYAN + '-'*80)
-
             print(Fore.CYAN + '-'*30 + 'DNS RESULT' + Fore.CYAN + '-'*30)
-            #mardns=mar_targets.run(task=send_command,configs='show running-config | inc dns-server ')
             for x in marresultt:
                mardns1=marresultt[x][0].result
             print(Fore.RED + mardns1)
